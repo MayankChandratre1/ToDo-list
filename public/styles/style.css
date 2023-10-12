@@ -1,0 +1,131 @@
+  @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;600&display=swap');
+
+
+:root{
+    --blueback:#FFF5E0;
+    --white:#FF6969;
+    --textcolor:#141E46;
+    --hover:#C70039;
+    --test:#cfcfcf;
+    /* --blueback:#12229D;
+    --white:#F4F6FC;
+    --textcolor:#050A30;
+    --test:#cfcfcf; */
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100dvh;
+    background-color: var(--blueback);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Teko', sans-serif;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    width: 100%;
+}
+.heading, nav{
+    margin: 0.7rem;
+    color:var(--textcolor);
+    
+}
+nav > a{
+    text-decoration: none;
+    margin: 1rem;
+    color:var(--textcolor);
+    font-size: 2rem;
+}
+
+main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    flex:1;
+}
+.datebar{
+    background-color: var(--white);
+    width:480px;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius:30px;
+    margin:2rem 0 1rem 0;
+    color:var(--textcolor);
+}
+
+.box{
+    /* background-color: var(--test); */
+    width: 480px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addTask{
+    width: 80%;
+    display: flex;
+    margin-bottom: 2.5rem;
+}
+
+
+.addTask input{
+    margin: 0 0 0 1rem;
+    padding: 0 0 0 0.3rem;
+    flex-grow: 1;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--white);
+    color: var(--white);
+}
+.addTask input:focus{
+    outline: none;
+}
+.addTask button{
+    width: 2rem;
+    height: 2rem;
+    margin: 0 1rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: var(--white);
+}
+.box .item{
+    background-color: var(--white);
+    display: flex;
+    gap: 1rem;
+    width: 80%;
+    padding: 0.8rem;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    color: var(--textcolor);
+    border: 2px solid var(--textcolor);
+   }
+.item input:checked + p{
+    text-decoration: line-through;
+}
+footer{
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--white);
+}
+.datebar:hover, .item:hover, button:active{
+    background-color: var(--hover);
+}
+nav > a:hover{
+    color:var(--hover);
+}
+
+@media  (max-width:480px) {
+    .box , .datebar{
+        width:350px;
+    }
+}

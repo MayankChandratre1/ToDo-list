@@ -1,0 +1,23 @@
+<%- include('./partials/header.ejs') %>
+        <div class="datebar">
+            <% let d = new Date() %>
+            <% let days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"] %>
+            <h2><%= (d.getDate()) +" - "+(d.getMonth()+1) +" - "+(d.getFullYear())+" , "+(days[d.getDay()]) %></h2>
+        </div>
+        <div class="box">
+            <form class="addTask" action="/" method="post" onsubmit="(e)=>{
+                e.preventDefault();
+            }">
+                <input type="text" name="taskfield" id="taskfield">
+                <button type="submit" >+</button>
+            </form>
+            <% if(locals.taskList){ %>
+                <% for(var i = 0;i < taskList.length; i++){ %>
+                  <div class="item">
+                    <input type="checkbox" name="task" id="task">
+                    <p><%= taskList[i] %></p>
+                  </div>
+                <% } %>
+            <% } %>
+        </div>
+<%- include('./partials/footer.ejs') %>
